@@ -28,15 +28,15 @@ class HomeWorkController extends AbstractController
     }
 
     /**
-     * @Route("/request/{word}", name="request", requirements={"word"="\w+"})
+     * @Route("/request/{letters}", name="request", requirements={"letters"="[a-zа]"})
      *
-     * @param $word
+     * @param $letters
      *
      * @return Response
      */
-    public function request($word)
+    public function request($letters)
     {
-        return new Response( $this->json([ 'word' => $word ]) );
+        return new Response( $this->json([ 'letters' => $letters ]) );
     }
 
     /**
