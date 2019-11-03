@@ -36,10 +36,7 @@ class HomeWorkController extends AbstractController
      */
     public function request($word)
     {
-        $response = new Response();
-        $response->setContent(json_encode([ 'word' => $word ]));
-        $response->headers->set('Content-Type', 'application/json');
-        return $response;
+        return new Response( $this->json([ 'word' => $word ]) );
     }
 
     /**
